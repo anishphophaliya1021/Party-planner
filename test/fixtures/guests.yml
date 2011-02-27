@@ -1,0 +1,11 @@
+one:
+  name: MyString
+  email: MyString
+  host_id: 1
+  notes: MyText
+
+two:
+  name: MyString
+  email: MyString
+  host_id: 1
+  notes: MyText

@@ -33,3 +33,4 @@ gem "bcrypt-ruby", :require => "bcrypt"
 # group :development, :test do
 #   gem 'webrat'
 # end
+gem "mocha", :group => :test

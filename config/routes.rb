@@ -1,4 +1,6 @@
 PartyPlanner::Application.routes.draw do
+  resources :party_types
+
   resources :parties
 
   resources :locations

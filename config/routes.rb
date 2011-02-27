@@ -1,4 +1,6 @@
 PartyPlanner::Application.routes.draw do
+  resources :gifts
+
   resources :guests
 
   # The priority is based upon order of creation:

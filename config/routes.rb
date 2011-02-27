@@ -1,4 +1,6 @@
 PartyPlanner::Application.routes.draw do
+  resources :invitations
+
   resources :hosts
 
   resources :gifts

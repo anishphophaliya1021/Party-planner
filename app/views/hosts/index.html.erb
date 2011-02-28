@@ -6,7 +6,6 @@
     <th>Last Name</th>
     <th>Email</th>
     <th>Username</th>
-    <th>Password</th>
   </tr>
   <% for host in @hosts %>
     <tr>
@@ -14,7 +13,6 @@
       <td><%= host.last_name %></td>
       <td><%= host.email %></td>
       <td><%= host.username %></td>
-      <td><%= host.password %></td>
       <td><%= link_to "Show", host %></td>
       <td><%= link_to "Edit", edit_host_path(host) %></td>
       <td><%= link_to "Destroy", host, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -7,6 +7,8 @@ PartyPlanner::Application.routes.draw do
 
   match 'login' => 'sessions#new', :as => :login
 
+  match 'home' => 'home#index', :as => :home
+  
   resources :sessions
 
   resources :hosts
@@ -22,6 +24,7 @@ PartyPlanner::Application.routes.draw do
   resources :gifts
 
   resources :guests
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -72,7 +75,7 @@ PartyPlanner::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "hosts#index"
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -4,6 +4,13 @@ body {
   font-size: 14px;
 }
 
+#enter_info{
+	text-align: center;
+	font-size: 30px;
+	font-color: black;
+	font-family: Times New Roman
+}
+
 a img {
   border: none;
 }

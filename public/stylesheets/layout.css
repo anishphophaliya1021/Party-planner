@@ -22,8 +22,8 @@
 }
 
 #side_nav {
-	padding:0px;
-	font-size: 120%;
+	padding:5px;
+	font-size: 140%;
 	/* background-color: #000000; */
 	background:url(../images/layout/steel_bg.gif) repeat-y top left;
 }

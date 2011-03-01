@@ -1,4 +1,16 @@
 PartyPlanner::Application.routes.draw do
+  match 'host/edit' => 'hosts#edit', :as => :edit_current_host
+
+  match 'signup' => 'hosts#new', :as => :signup
+
+  match 'logout' => 'sessions#destroy', :as => :logout
+
+  match 'login' => 'sessions#new', :as => :login
+
+  resources :sessions
+
+  resources :hosts
+
   resources :party_types
 
   resources :parties
@@ -6,8 +18,6 @@ PartyPlanner::Application.routes.draw do
   resources :locations
 
   resources :invitations
-
-  resources :hosts
 
   resources :gifts
 
@@ -62,7 +72,7 @@ PartyPlanner::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "hosts#index"
 
   # See how all your routes lay out with "rake routes"
 

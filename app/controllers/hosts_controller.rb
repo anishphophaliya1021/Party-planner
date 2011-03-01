@@ -1,41 +1,45 @@
 class HostsController < ApplicationController
-  def index
-    @hosts = Host.all
-  end
-
-  def show
-    @host = Host.find(params[:id])
-  end
+  before_filter :login_required, :except => [:new, :create]
 
   def new
     @host = Host.new
   end
-
+  
+  def index
+	@hosts=Host.all
+  end
+  
+  def show
+	 @host = Host.find(params[:id])
+  end
+  
   def create
     @host = Host.new(params[:host])
     if @host.save
-      redirect_to @host, :notice => "Successfully created host."
+      session[:host_id] = @host.id
+      redirect_to root_url, :notice => "Thank you for signing up! You are now logged in."
     else
       render :action => 'new'
     end
   end
 
   def edit
-    @host = Host.find(params[:id])
+    @host = current_host
   end
 
   def update
-    @host = Host.find(params[:id])
+    @host = current_host
     if @host.update_attributes(params[:host])
-      redirect_to @host, :notice  => "Successfully updated host."
+      redirect_to root_url, :notice => "Your profile has been updated."
     else
       render :action => 'edit'
     end
   end
-
+  
   def destroy
-    @host = Host.find(params[:id])
-    @host.destroy
-    redirect_to hosts_url, :notice => "Successfully destroyed host."
+		@host = Host.find(params[:id])
+		@host.destroy
+		redirect_to hosts_url, :notice => "Successfully destroyed host."
+		#redirect_to hosts_url, :notice => "cannot destroy host #{session[:host_id]} , #{@host.id}."
   end
 end

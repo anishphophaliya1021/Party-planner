@@ -21,7 +21,7 @@
 					<% flash.each do |name, msg| %>
 		        <%= content_tag :div, msg, :id => "flash_#{name}" %>
 		      <% end %>
-				<table border="0" cellspacing:"20">
+				<table border="1" cellspacing:"20">
 					<tr><td></td><br><td></td></tr>
 					<tr>
 						<td>
@@ -33,7 +33,7 @@
 								<%= render :partial => 'partials/animal_pics' %>
 							<% end %>
 						</td>
-						<td><%= yield %></td>
+						<td style = "width:100%"><%= yield %></td>
 					</tr>
 				</table>
 			</div> <!-- end of body div -->

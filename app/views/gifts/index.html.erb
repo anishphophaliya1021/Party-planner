@@ -3,13 +3,13 @@
 <table>
   <tr>
     <th>Invitation</th>
-    <th>Note Sent On</th>
+    <th>NoteSentOn</th>
     <th>Description</th>
   </tr>
   <% for gift in @gifts %>
     <tr>
       <td><%= gift.invitation_id %></td>
-      <td><%= gift.note_sent_on %></td>
+      <td><%= gift.note_sent_on.strftime("%m/%d/%Y") %></td>
       <td><%= gift.description %></td>
       <td><%= link_to "Show", gift %></td>
       <td><%= link_to "Edit", edit_gift_path(gift) %></td>

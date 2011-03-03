@@ -13,6 +13,7 @@ class PartiesController < ApplicationController
 
   def create
     @party = Party.new(params[:party])
+	@party.host_id = current_host.id
     if @party.save
       redirect_to @party, :notice => "Successfully created party."
     else

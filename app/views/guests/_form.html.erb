@@ -8,9 +8,10 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </p>
+  
+  <%# This is a hidden field and is used to store the host id as the current host's id.%>
   <p>
-    <%= f.label :host_id %><br />
-    <%= f.text_field :host_id %>
+    <%=  f.hidden_field :host_id, :value => current_host.id %>
   </p>
   <p>
     <%= f.label :notes %><br />

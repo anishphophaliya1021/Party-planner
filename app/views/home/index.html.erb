@@ -1,8 +1,9 @@
 <% if logged_in? %>
-<r style="font-family:Times New Roman;color:red; font-size:20px">
+<r style="font-family:Times New Roman;color:blue; font-size:20px; text-align:right;">
 Welcome
-<%= current_host.name.capitalize %>
-
+<%= current_host.first_name.capitalize %>
+<%= current_host.last_name.capitalize %>
+</r>
 <%else%>
 
 <l style = "font-size:35px; font-family:Cambria;font-style:bold;color:#2E8B57">Welcome to the Party Planner</h1>

@@ -1,9 +1,8 @@
 <% title "Parties" %>
 
-<table>
+<table cellpadding= "5";>
   <tr>
-    <th>Party Type</th>
-    <th>Host</th>
+    <th>PartyType</th>
     <th>Name</th>
     <th>Location</th>
     <th>Date</th>
@@ -12,17 +11,17 @@
     <th>Description</th>
     <th>Rsvp Date</th>
   </tr>
-  <% for party in @parties %>
+  <% for party in current_host.parties %>
     <tr>
       <td><%= party.party_type_id %></td>
-      <td><%= party.host_id %></td>
+      <%# party.host_id %>
       <td><%= party.name %></td>
       <td><%= party.location_id %></td>
-      <td><%= party.date %></td>
-      <td><%= party.start_time %></td>
-      <td><%= party.end_time %></td>
+      <td><%= party.date.strftime("%m/%d/%Y") %></td>
+      <td><%= party.start_time.strftime("%I:%M%p") %></td>
+      <td><%= party.end_time.strftime("%I:%M%p") %></td>
       <td><%= party.description %></td>
-      <td><%= party.rsvp_date %></td>
+      <td><%= party.rsvp_date.strftime("%m/%d/%Y") %></td>
       <td><%= link_to "Show", party %></td>
       <td><%= link_to "Edit", edit_party_path(party) %></td>
       <td><%= link_to "Destroy", party, :confirm => 'Are you sure?', :method => :delete %></td>

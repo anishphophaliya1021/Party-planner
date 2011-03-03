@@ -1,4 +1,12 @@
 class Host < ActiveRecord::Base
+  
+  # Validations
+  # -----------------------------
+  has_many :guests
+  has_many :parties
+  has_many :locations
+  
+  
   # new columns need to be added here to be writable through mass assignment
   attr_accessible :first_name, :last_name, :username, :email, :password, :password_confirmation
 

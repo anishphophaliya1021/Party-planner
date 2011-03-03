@@ -2,10 +2,10 @@
 /* CSS Document */
 
 #wrap {
-	width:900px;
+	width:1200px;
 	margin:0 auto;
 	padding:0;
-	background:url(/images/layout/body_bg_900.jpg) repeat-y top left;
+	background: #fff;
 }
 
 #header {
@@ -49,7 +49,7 @@
 #footer {
 	margin:0;
 	padding:10px 15px 5px 15px;
-	background:url(../images/layout/footer_900.jpg) no-repeat bottom left;
+	/*background:url(../images/layout/footer_900.jpg) no-repeat bottom left;*/
 	text-align:center;
 	font-size: 93%;
 }

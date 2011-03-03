@@ -1,21 +1,21 @@
 <% title "Guests" %>
 
-<table>
+<table cellspacing="10">
   <tr>
     <th>Name</th>
     <th>Email</th>
-    <th>Host</th>
     <th>Notes</th>
   </tr>
-  <% for guest in @guests %>
+  <% for guest in current_host.guests %>
     <tr>
       <td><%= guest.name %></td>
       <td><%= guest.email %></td>
-      <td><%= guest.host_id %></td>
-      <td><%= guest.notes %></td>
-      <td><%= link_to "Show", guest %></td>
-      <td><%= link_to "Edit", edit_guest_path(guest) %></td>
-      <td><%= link_to "Destroy", guest, :confirm => 'Are you sure?', :method => :delete %></td>
+	  <%#We have removed the host_id as its the current user's id %>
+      <%# guest.host_id %>
+		  <td><%= guest.notes %></td>
+		  <td><%= link_to "Show", guest %></td>
+		  <td><%= link_to "Edit", edit_guest_path(guest) %></td>
+		  <td><%= link_to "Destroy", guest, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>

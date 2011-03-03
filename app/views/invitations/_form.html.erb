@@ -2,7 +2,7 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :party_id %><br />
-    <%= f.text_field :party_id %>
+    <%= f.collection_select :party_id, Party.currentUser(current_host), :id, :name %>
   </p>
   <p>
     <%= f.label :guest_id %><br />

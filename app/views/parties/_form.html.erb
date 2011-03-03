@@ -1,40 +1,14 @@
-<%= form_for @party do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :party_type_id %><br />
-    <%= f.text_field :party_type_id %>
-  </p>
-  <p>
-    <%= f.label :host_id %><br />
-    <%= f.text_field :host_id %>
-  </p>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :location_id %><br />
-    <%= f.text_field :location_id %>
-  </p>
-  <p>
-    <%= f.label :date %><br />
-    <%= f.date_select :date %>
-  </p>
-  <p>
-    <%= f.label :start_time %><br />
-    <%= f.time_select :start_time %>
-  </p>
-  <p>
-    <%= f.label :end_time %><br />
-    <%= f.time_select :end_time %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :rsvp_date %><br />
-    <%= f.date_select :rsvp_date %>
-  </p>
-  <p><%= f.submit %></p>
+<% semantic_form_for(@party) do |p| %>
+<a style = "padding:5px">
+	<%= p.inputs do %>
+		<%= p.input :name, :required => true %>
+		<%= p.input :location_id, :as => :select, :collection => Location.all, :required => true%>
+		<%= p.input :party_type_id, :as => :select, :collection => PartyType.all, :required => true%>
+		<%= p.input :date, :required => true,:order => [:month, :day, :year], :start_year => 2011, :end_year => 2021 %>
+		<%= p.input :rsvp_date, :order => [:month, :day, :year], :start_year => 2011%>
+		<%= p.input :start_time %><br>
+		<%= p.input :end_time %>
+		<%= p.input :description%>
+	<% end %>
+	<%= p.buttons %>
 <% end %>

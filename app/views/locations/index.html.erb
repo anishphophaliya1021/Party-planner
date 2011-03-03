@@ -11,7 +11,7 @@
     <th>Latitude</th>
     <th>Longitude</th>
   </tr>
-  <% for location in @locations %>
+  <% for location in current_host.locations %>
     <tr>
       <td><%= location.host_id %></td>
       <td><%= location.name %></td>

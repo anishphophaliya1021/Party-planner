@@ -8,6 +8,9 @@
 		<%= link_to 'Parties', parties_path %><br>
 		<%= link_to 'Guests', guests_path %><br>
 		<%= link_to 'Locations', locations_path %><br>
+		<%= link_to 'Invitations', invitations_path %><br>
+		<%= link_to 'Gifts', gifts_path %><br>
+		<%= link_to "Profile", edit_host_path(current_host) %><br>
 		<!-- can set this manually, or just use the named route 'logout' -->
 		<%# link_to 'Logout', { :controller => :sessions, :action => :destroy } %>
 		<%= link_to 'Logout', logout_path %><br>

@@ -2,9 +2,9 @@ class Host < ActiveRecord::Base
   
   # Validations
   # -----------------------------
-  has_many :guests
-  has_many :parties
-  has_many :locations
+  has_many :guests, :dependent => :destroy
+  has_many :parties, :dependent => :destroy
+  has_many :locations, :dependent => :destroy
   
   
   # new columns need to be added here to be writable through mass assignment

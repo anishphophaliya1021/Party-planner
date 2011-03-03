@@ -14,10 +14,10 @@
   <%# I am using it here!!!!! %>
   <% for party in current_host.parties %>
     <tr>
-      <td><%= party.party_type_id %></td>
-      <%# party.host_id %>
+      <td><%= party.party_type.name %></td>
+      <%# party.host.name %>
       <td><%= party.name %></td>
-      <td><%= party.location_id %></td>
+      <td><%= party.location.name %></td>
       <td><%= party.date.strftime("%m/%d/%Y") %></td>
       <td><%= party.start_time.strftime("%I:%M%p") %></td>
       <td><%= party.end_time.strftime("%I:%M%p") %></td>

@@ -4,7 +4,7 @@ class Guest < ActiveRecord::Base
   #RELATIONSHIPS
   #---------------------------------------------
   belongs_to :host
-  has_many :invitations
+  has_many :invitations, :dependent => :destroy
   has_many :parties, :through => :invitations
   
   # Validations

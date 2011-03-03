@@ -2,7 +2,13 @@
 <a style = "padding:5px">
 	<%= p.inputs do %>
 		<%= p.input :name, :required => true %>
-		<%= p.input :location_id, :as => :select, :collection => Location.all, :required => true%>
+		<%# p.input :location_id, :as => :select, :collection => Location.all, :required => true%>
+		<p>
+    <%= p.label :location_id %>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <%= p.collection_select :location_id, current_host.locations, :id, :name%>
+		<a href=/locations/new target="_blank">Add New Location</a>
+		</p><br>
 		<%= p.input :party_type_id, :as => :select, :collection => PartyType.all, :required => true%>
 		<%= p.input :date, :required => true,:order => [:month, :day, :year], :start_year => 2011, :end_year => 2021 %>
 		<%= p.input :rsvp_date, :order => [:month, :day, :year], :start_year => 2011%>
@@ -12,3 +18,5 @@
 	<% end %>
 	<%= p.buttons %>
 <% end %>
+
+

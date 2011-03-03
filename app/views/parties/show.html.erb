@@ -2,11 +2,7 @@
 
 <p>
   <strong>Party Type:</strong>
-  <%= @party.party_type_id %>
-</p>
-<p>
-  <strong>Host:</strong>
-  <%= @party.host_id %>
+  <%= @party.party_type.name %>
 </p>
 <p>
   <strong>Name:</strong>
@@ -14,7 +10,7 @@
 </p>
 <p>
   <strong>Location:</strong>
-  <%= @party.location_id %>
+  <%= @party.location.name %>
 </p>
 <p>
   <strong>Date:</strong>

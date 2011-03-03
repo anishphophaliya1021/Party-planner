@@ -1,19 +1,24 @@
 <% if logged_in? %>
-<r style="font-family:Times New Roman;color:blue; font-size:20px; text-align:right;">
+<div id="welcome">
+<br>
 Welcome
 <%= current_host.first_name.capitalize %>
 <%= current_host.last_name.capitalize %>
-</r>
+</div>
+<br>
+<h1>UPCOMING PARTY</h1>
+<br>
+<%= render :partial => 'partials/latest_party' %>
 <%else%>
 
-<l style = "font-size:35px; font-family:Cambria;font-style:bold;color:#2E8B57">Welcome to the Party Planner</h1>
+<h1 style = "font-size:35px; font-family:Cambria;font-style:bold;color:#2E8B57">Welcome to the Party Planner</h1>
 <br><br>
 
 <% end %>
 <% if !logged_in? %>
-	<x style = "font-family:Times New Roman; font-size:25px;  ">
+	<p style = "font-family:Times New Roman; font-size:25px;  ">
 	<%= link_to 'Login', login_path %>
 	/
 	<%= link_to 'Signup', signup_path %>
-	<x/>
+	</p>
 <% end %>

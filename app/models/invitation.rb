@@ -3,7 +3,7 @@ class Invitation < ActiveRecord::Base
   before_save :gen_rand
   #RELATIONSHIPS
   #---------------------------------------------
-  has_many :gifts
+  has_many :gifts, :dependent => :destroy
   belongs_to :guest 
   belongs_to :party
   

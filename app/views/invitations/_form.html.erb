@@ -3,22 +3,17 @@
   <p>
     <%= f.label :party_id %><br />
     <%= f.collection_select :party_id, Party.currentUser(current_host), :id, :name %>
+	&nbsp&nbsp&nbsp&nbsp&nbsp<a href=/parties/new target="_blank">Add New Party</a>
   </p>
   <p>
     <%= f.label :guest_id %><br />
-    <%= f.text_field :guest_id %>
-  </p>
-  <p>
-    <%= f.label :invite_code %><br />
-    <%= f.text_field :invite_code %>
+    <%= f.collection_select :guest_id, current_host.guests, :id, :name%>
+	&nbsp&nbsp&nbsp&nbsp&nbsp<a href=/guests/new target="_blank">Add New Guest</a>
   </p>
   <p>
     <%= f.label :expected_attendees %><br />
     <%= f.text_field :expected_attendees %>
   </p>
-  <p>
-    <%= f.label :actual_attendees %><br />
-    <%= f.text_field :actual_attendees %>
-  </p>
   <p><%= f.submit %></p>
 <% end %>
+

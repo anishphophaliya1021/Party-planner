@@ -13,6 +13,10 @@ class Invitation < ActiveRecord::Base
   validates_inclusion_of :party_id, :in => Party.all.map{|p| p.id}
   validates_inclusion_of :guest_id, :in => Guest.all.map{|g| g.id}
   
+  # Scopes
+  # -----------------------------
+  scope :currentUser, lambda{|g| where(["guest_id in ?", g.id])}
+  
   def gen_rand
    self.invite_code = rand(36**16).to_s(36)
   end

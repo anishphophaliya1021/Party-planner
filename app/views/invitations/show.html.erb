@@ -1,16 +1,12 @@
 <% title "Invitation" %>
-
-<p>
-  <strong>Party:</strong>
-  <%= @invitation.party_id %>
-</p>
+<h1>Invitation for </h1>
 <p>
   <strong>Guest:</strong>
-  <%= @invitation.guest_id %>
+  <%= @invitation.guest.name %>
 </p>
 <p>
-  <strong>Invite Code:</strong>
-  <%= @invitation.invite_code %>
+  <strong>Party:</strong>
+  <%= @invitation.party.name %>
 </p>
 <p>
   <strong>Expected Attendees:</strong>
@@ -18,8 +14,11 @@
 </p>
 <p>
   <strong>Actual Attendees:</strong>
-  <%= @invitation.actual_attendees %>
-</p>
+ <% if(@invitation.actual_attendees == nil) %>
+		<em><%= "Not RSVP'd yet" %></em>
+      <% else %>
+		<%= @invitation.actual_attendees %>
+	  <% end %>
 
 <p>
   <%= link_to "Edit", edit_invitation_path(@invitation) %> |

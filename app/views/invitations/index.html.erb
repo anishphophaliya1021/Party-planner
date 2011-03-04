@@ -1,20 +1,22 @@
 <% title "Invitations" %>
-
+<h1>My Invitations</h1>
 <table>
   <tr>
     <th>Party</th>
     <th>Guest</th>
-    <th>Invite Code</th>
     <th>Expected Attendees</th>
     <th>Actual Attendees</th>
   </tr>
   <% for invitation in @invitations %>
     <tr>
-      <td><%= invitation.party_id %></td>
-      <td><%= invitation.guest_id %></td>
-      <td><%= invitation.invite_code %></td>
+      <td><%= invitation.party.name %></td>
+      <td><%= invitation.guest.name %></td>
       <td><%= invitation.expected_attendees %></td>
-      <td><%= invitation.actual_attendees %></td>
+	  <% if(invitation.actual_attendees == nil) %>
+		<td><em><%= "Not RSVP'd yet" %></em></td>
+      <% else %>
+		<td><%= invitation.actual_attendees %></td>
+	  <% end %>
       <td><%= link_to "Show", invitation %></td>
       <td><%= link_to "Edit", edit_invitation_path(invitation) %></td>
       <td><%= link_to "Destroy", invitation, :confirm => 'Are you sure?', :method => :delete %></td>

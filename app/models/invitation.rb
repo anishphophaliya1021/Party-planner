@@ -6,6 +6,7 @@ class Invitation < ActiveRecord::Base
   has_many :gifts, :dependent => :destroy
   belongs_to :guest 
   belongs_to :party
+  belongs_to :host
   
   # Validations
   # -----------------------------

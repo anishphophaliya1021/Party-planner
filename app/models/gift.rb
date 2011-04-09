@@ -4,6 +4,9 @@ class Gift < ActiveRecord::Base
   #RELATIONSHIPS
   #---------------------------------------------
   belongs_to :invitation
+  belongs_to :guest
+  belongs_to :host
+  belongs_to :party
   
   # Validations
   # -----------------------------

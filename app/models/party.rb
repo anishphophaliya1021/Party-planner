@@ -4,7 +4,8 @@ class Party < ActiveRecord::Base
   #RELATIONSHIPS
   #---------------------------------------------
   has_many :invitations, :dependent => :destroy
-  has_many :guests, :through => :invitations  
+  has_many :gifts, :through => :invitations
+  has_many :guests, :through => :invitations
   belongs_to :host
   belongs_to :location
   belongs_to :party_type

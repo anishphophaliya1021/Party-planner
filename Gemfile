@@ -1,36 +1,35 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'rails', '3.0.7'
 gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'nifty-generators'
 gem 'will_paginate'
+gem 'nifty-generators'
+gem 'validates_timeliness', '~> 3.0.2'
+gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'formtastic'
-gem "bcrypt-ruby", :require => "bcrypt"
+gem 'chronic'
+gem 'email_spec', '1.1.1'
+gem 'nokogiri', '1.4.4'
+gem 'geokit'
+gem 'rspec'
+gem 'gherkin'
+gem	'json'
+gem 'json_pure'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+group :development do
+  gem 'wirble'
+	gem 'hirb'
+	gem 'populator3'
+	gem 'faker'
+end
 
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19'
-
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
-gem "mocha", :group => :test
+group :test do
+	gem 'shoulda'
+	gem 'factory_girl_rails'
+	gem 'mocha'
+	gem 'cucumber-rails', '0.4.1'
+	gem 'capybara', '0.4.1.2'
+	gem 'database_cleaner'
+	gem 'launchy'
+	gem 'simplecov'
+end

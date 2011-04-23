@@ -1,6 +1,6 @@
 class GiftsController < ApplicationController
   def index
-    @gifts = Gift.all
+    @gifts = current_host.gifts
   end
 
   def show

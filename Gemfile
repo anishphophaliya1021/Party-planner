@@ -8,8 +8,7 @@ gem 'validates_timeliness', '~> 3.0.2'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'formtastic'
 gem 'chronic'
-gem 'email_spec', '1.1.1'
-gem 'nokogiri', '1.4.4'
+gem 'nokogiri'
 gem 'geokit'
 gem 'rspec'
 gem 'gherkin'
@@ -24,6 +23,7 @@ group :development do
 end
 
 group :test do
+	gem 'email_spec'
 	gem 'shoulda'
 	gem 'factory_girl_rails'
 	gem 'mocha'

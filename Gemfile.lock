@@ -92,7 +92,7 @@ GEM
     mime-types (1.16)
     mocha (0.9.12)
     nifty-generators (0.4.6)
-    nokogiri (1.4.4-x86-mingw32)
+    nokogiri (1.4.4.1-x86-mingw32)
     polyglot (0.3.1)
     populator3 (0.2.7)
     rack (1.2.2)
@@ -157,7 +157,7 @@ DEPENDENCIES
   chronic
   cucumber-rails (= 0.4.1)
   database_cleaner
-  email_spec (= 1.1.1)
+  email_spec
   factory_girl_rails
   faker
   formtastic
@@ -169,7 +169,7 @@ DEPENDENCIES
   launchy
   mocha
   nifty-generators
-  nokogiri (= 1.4.4)
+  nokogiri
   populator3
   rails (= 3.0.7)
   rspec

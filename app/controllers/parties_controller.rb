@@ -1,6 +1,6 @@
 class PartiesController < ApplicationController
   def index
-    @parties = Party.all
+    @parties = current_host.parties.paginate :page => params[:page], :per_page => 10
   end
 
   def show

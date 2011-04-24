@@ -2,12 +2,12 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :party_id %><br />
-    <%= f.collection_select :party_id, Party.currentUser(current_host), :id, :name %>
+	<%= f.collection_select :party_id, current_host.parties, :id, :name, :prompt => "Select a party" %>
 	&nbsp&nbsp&nbsp&nbsp&nbsp<a href=/parties/new target="_blank">Add New Party</a>
   </p>
   <p>
     <%= f.label :guest_id %><br />
-    <%= f.collection_select :guest_id, current_host.guests, :id, :name%>
+	<%= f.collection_select :guest_id, current_host.guests, :id, :name, :prompt => "Select a guest" %>
 	&nbsp&nbsp&nbsp&nbsp&nbsp<a href=/guests/new target="_blank">Add New Guest</a>
   </p>
   <p>

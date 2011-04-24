@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   def index
-    @locations = Location.all
+    @locations = current_host.locations.paginate :page => params[:page], :per_page => 10
   end
 
   def show
@@ -13,6 +13,7 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(params[:location])
+	@location.host_id = current_host.id
     if @location.save
       redirect_to @location, :notice => "Successfully created location."
     else

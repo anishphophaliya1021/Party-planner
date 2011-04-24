@@ -2,8 +2,10 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :invitation_id %><br />
-    <%= f.text_field :invitation_id %>
+	<%= f.collection_select :invitation_id, current_host.invitations, :id, :name, :prompt => "Select an invitation" %>
+	&nbsp&nbsp&nbsp&nbsp&nbsp<a href=/invitations/new target="_blank">Add New Invitation</a>
   </p>
+  
   <p>
     <%= f.label :note_sent_on %><br />
     <%= f.date_select :note_sent_on %>

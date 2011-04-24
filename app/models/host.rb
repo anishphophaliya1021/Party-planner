@@ -5,7 +5,7 @@ class Host < ActiveRecord::Base
   has_many :guests, :dependent => :destroy
   has_many :parties, :dependent => :destroy
   has_many :locations, :dependent => :destroy
-  has_many :invitations, :through => :party
+  has_many :invitations, :through => :parties
   has_many :gifts, :through => :invitations
   
   

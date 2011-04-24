@@ -1,6 +1,6 @@
 class InvitationsController < ApplicationController
   def index
-    @invitations = Invitation.all
+    @invitations = current_host.invitations.paginate :page => params[:page], :per_page => 10
   end
 
   def show

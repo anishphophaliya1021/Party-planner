@@ -6,7 +6,7 @@ class HostsController < ApplicationController
   end
   
   def index
-		if(current_host.username == "AdMiNiStRaToR")
+		if(current_host.username == "aphophal")
 			@hosts=Host.all
 		else
 			redirect_to root_url, :notice => "Sorry you don't have permission to access this page"

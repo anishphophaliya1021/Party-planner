@@ -1,5 +1,5 @@
-<% title "Gifts" %>
-
+<h1> Gifts </h1>
+<br>
 <table>
   <tr>
     <th>Invitation</th>
@@ -8,7 +8,7 @@
   </tr>
   <% for gift in @gifts %>
     <tr>
-      <td><%= gift.invitation_id %></td>
+      <td><%= gift.invitation.guest.name + " for " + gift.invitation.party.name %></td>
       <td><%= gift.note_sent_on.strftime("%m/%d/%Y") %></td>
       <td><%= gift.description %></td>
       <td><%= link_to "Show", gift %></td>

@@ -3,10 +3,10 @@ class Guest < ActiveRecord::Base
   
   #RELATIONSHIPS
   #---------------------------------------------
-  belongs_to :host
   has_many :invitations, :dependent => :destroy
-  has_many :parties, :through => :invitations
   has_many :gifts, :through => :invitations
+  has_many :parties, :through => :invitations
+  belongs_to :host
   
   # Validations
   # -----------------------------

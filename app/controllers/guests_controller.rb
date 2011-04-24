@@ -1,6 +1,6 @@
 class GuestsController < ApplicationController
   def index
-	@guests = Guest.all.paginate :page => params[:page], :per_page => 10
+	@guests = current_host.guests.paginate :page => params[:page], :per_page => 10
   end
 
   def show

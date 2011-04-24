@@ -1,6 +1,7 @@
 class GiftsController < ApplicationController
   def index
-    @gifts = current_host.gifts
+	@gifts = Gift.all.select! {|g| current_host.invitations.include?(g.invitation)}
+	@gifts = @gifts.paginate :page => params[:page], :per_page => 10
   end
 
   def show

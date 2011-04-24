@@ -1,9 +1,7 @@
 <% title "Location" %>
-
-<p>
-  <strong>Host:</strong>
-  <%= @location.host_id %>
-</p>
+<table>
+<tr>
+<td>
 <p>
   <strong>Name:</strong>
   <%= @location.name %>
@@ -38,3 +36,11 @@
   <%= link_to "Destroy", @location, :confirm => 'Are you sure?', :method => :delete %> |
   <%= link_to "View All", locations_path %>
 </p>
+</td>
+<td>
+
+<%= image_tag @location.create_map_link%>	
+
+</td>
+</tr>
+</table>

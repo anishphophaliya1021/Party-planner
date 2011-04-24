@@ -2,7 +2,6 @@
 <h1>My Locations</h1>
 <table>
   <tr>
-    <th>Host</th>
     <th>Name</th>
     <th>Street</th>
     <th>City</th>
@@ -13,7 +12,6 @@
   </tr>
   <% for location in current_host.locations %>
     <tr>
-      <td><%= location.host_id %></td>
       <td><%= location.name %></td>
       <td><%= location.street %></td>
       <td><%= location.city %></td>

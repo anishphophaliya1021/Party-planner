@@ -31,7 +31,7 @@ class Location < ActiveRecord::Base
   private
   
 	def find_location_coordinates
-		coord = Geokit::Geocoders::GoogleGeocoder.geocode "#{self.name}, #{self.city}, #{self.state}"
+		coord = Geokit::Geocoders::GoogleGeocoder.geocode "#{self.name}, #{self.street}, #{self.city}, #{self.state}"
 		if coord.success
 			self.latitude, self.longitude = coord.ll.split(',')
 		else

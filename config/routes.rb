@@ -9,6 +9,12 @@ PartyPlanner::Application.routes.draw do
 
   match 'home' => 'home#index', :as => :home
   
+  match 'about' => 'home#about', :as => :about
+  
+  match 'contact' => 'home#contact', :as => :contact
+  
+  match 'privacy' => 'home#privacy', :as => :privacy
+  
   resources :sessions
 
   resources :hosts

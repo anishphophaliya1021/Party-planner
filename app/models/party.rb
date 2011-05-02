@@ -1,11 +1,12 @@
 class Party < ActiveRecord::Base
   attr_accessible :party_type_id, :host_id, :name, :location_id, :date, :start_time, :end_time, :description, :rsvp_date
   
+  before_save :rsvp_update
   #RELATIONSHIPS
   #---------------------------------------------
-  has_many :invitations, :dependent => :destroy
   has_many :gifts, :through => :invitations
   has_many :guests, :through => :invitations
+  has_many :invitations, :dependent => :destroy
   belongs_to :host
   belongs_to :location
   belongs_to :party_type
@@ -24,5 +25,34 @@ class Party < ActiveRecord::Base
   validates_presence_of :date
   validates_presence_of :start_time
   validates_presence_of :party_type_id,:host_id,:location_id
+  validates_time :end_time, :after => :start_time, :message => "end time must be after start time"
+  validates_date :rsvp_date, :on_or_before => :date, :allow_nil => true, :message => "rsvp date must be before party date"
+  validates_date:date, :on_or_after => Date.current, :message => "party date must be on or after today's date"
+  
+  def confirmed_attendees
+	sum = 0
+	self.guests.each do |g|
+		if(g.actual_attendees != nil)
+			sum = sum + g.actual_attendees.to_i
+		end
+	end
+	return sum
+  end
+  
+  def rsvp_update
+	if self.rsvp_date == nil
+		self.rsvp_date = self.date
+	end
+  end
+  
+  def expected_attendees
+	sum = 0
+	self.guests.each do |g|
+		if(g.expected_attendees != nil)
+			sum = sum + g.expected_attendees.to_i
+		end
+	end
+	return sum
+  end
   
 end

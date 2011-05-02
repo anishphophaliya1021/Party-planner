@@ -27,7 +27,7 @@ class PartiesController < ApplicationController
 
   def update
     @party = Party.find(params[:id])
-    if @party.update_attributes(params[:party])
+	if @party.update_attributes(params[:party])
       redirect_to @party, :notice  => "Successfully updated party."
     else
       render :action => 'edit'

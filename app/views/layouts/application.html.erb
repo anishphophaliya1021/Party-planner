@@ -12,17 +12,20 @@
 	</head>
 
 	<body>
-		<div id="wrap">
-			<br />
-			<%# render :partial => 'partials/navigation' %>
+	  <div id="wrap">
+		<br />
+		<%# render :partial => 'partials/navigation' %>
 
-			<div style="clear:both;"></div>
+		<div style="clear:both;"></div>
 	    	<div id="body">
-					<% flash.each do |name, msg| %>
-		        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+			  <% flash.each do |name, msg| %>
+		      <%= content_tag :div, msg, :id => "flash_#{name}" %>
 		      <% end %>
 				<table border="0" cellspacing:"20">
-					<tr><td></td><br><td></td></tr>
+					<tr>
+						<td></td><br>
+						<td></td>
+					</tr>
 					<tr>
 						<td>
 							<!-- if logged in, give side navigation -->
@@ -33,7 +36,11 @@
 								<%# render :partial => 'partials/animal_pics' %>
 							<% end %>
 						</td>
-						<td style = "width:100%"><%= yield %></td>
+						
+						<td style = "width:100%">
+							<%= content_tag :h1, yield(:title) if show_title? %>
+							<%= yield %>
+						</td>
 					</tr>
 				</table>
 			</div> <!-- end of body div -->

@@ -3,15 +3,15 @@ class Gift < ActiveRecord::Base
   
   #RELATIONSHIPS
   #---------------------------------------------
+  belongs_to :party
   belongs_to :invitation
   belongs_to :guest
   belongs_to :host
-  belongs_to :party
   
   # Validations
   # -----------------------------
   validates_presence_of :invitation_id
   validates_presence_of :note_sent_on, :allow_nil => true
   validates_inclusion_of :invitation_id, :in => Invitation.all.map{|i| i.id}
-  
+  #validates_date :note_sent_on, :on_or_after => self.party.date
 end

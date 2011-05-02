@@ -5,11 +5,19 @@
 	<!-- OPTIONS FOR EVERYONE -->
 		<!--<li><em>Option: </em></li>-->
 		<%= link_to 'Home', home_path %><br>
+		<% if(current_host.isAdmin == true) %>
+			<%= link_to 'Hosts', hosts_path %><br>
+		<%end%>
 		<%= link_to 'Parties', parties_path %><br>
+		<% if(current_host.isAdmin == true) %>
+			<%= link_to 'Party Type', party_types_path %><br>
+		<%end%>
 		<%= link_to 'Guests', guests_path %><br>
 		<%= link_to 'Locations', locations_path %><br>
+		<% if(Party.all != nil && Guest.all != nil) %>
 		<%= link_to 'Invitations', invitations_path %><br>
 		<%= link_to 'Gifts', gifts_path %><br>
+		<%end%>
 		<%= link_to "Profile", edit_host_path(current_host) %><br>
 		<!-- can set this manually, or just use the named route 'logout' -->
 		<%# link_to 'Logout', { :controller => :sessions, :action => :destroy } %>

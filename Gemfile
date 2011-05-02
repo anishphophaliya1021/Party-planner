@@ -27,7 +27,7 @@ group :test do
 	gem 'shoulda'
 	gem 'factory_girl_rails'
 	gem 'mocha'
-	gem 'cucumber-rails', '0.4.1'
+	gem 'cucumber-rails'
 	gem 'capybara', '0.4.1.2'
 	gem 'database_cleaner'
 	gem 'launchy'

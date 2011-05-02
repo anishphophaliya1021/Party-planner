@@ -25,5 +25,9 @@
     <%= f.label :password_confirmation, "Confirm Password" %><br />
     <%= f.password_field :password_confirmation %>
   </p>
+  <% if(logged_in? && current_host.isAdmin == true) %>
+	<%= f.label :isAdmin, "isAdmin" %><br />
+    <%= f.check_box :isAdmin	 %>
+  <%end%>
   <p><%= f.submit (@host.new_record? ? "Sign up" : "Update") %></p>
 <% end %>

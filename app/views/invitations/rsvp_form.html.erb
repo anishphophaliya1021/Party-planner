@@ -1,6 +1,7 @@
 
 <div class="rsvp">
 	<%= form_for(@invitation) do |f| %>
+		<%= @invitation.id%>
 		<div class="field">
 	    <%= f.label :actual_attendees, 'Number of Guests Coming With You' %><br />
 			<span class="note">If you cannot attend, please enter zero</span><br /><br /> 

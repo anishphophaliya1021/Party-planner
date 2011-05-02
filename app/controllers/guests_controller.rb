@@ -1,4 +1,5 @@
 class GuestsController < ApplicationController
+  before_filter :login_required
   def index
 	@guests = current_host.guests.paginate :page => params[:page], :per_page => 10
   end

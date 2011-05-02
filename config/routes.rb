@@ -15,7 +15,9 @@ PartyPlanner::Application.routes.draw do
   
   match 'privacy' => 'home#privacy', :as => :privacy
   
-  match 'rsvp' => 'home#start_rsvp', :as => :start_rsvp
+  match 'rsvp' => 'invitations#start_rsvp', :as => :start_rsvp
+  
+  match 'rsvp_form' => 'invitations#rsvp_form', :as => :rsvp_form
   
   #match 'details' => 'home#rsvp_form', :as => _rsvp_form
   

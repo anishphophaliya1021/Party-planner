@@ -5,14 +5,11 @@
 	<%= f.collection_select :invitation_id, current_host.invitations, :id, :name, :prompt => "Select an invitation" %>
 	&nbsp&nbsp&nbsp&nbsp&nbsp<a href=/invitations/new target="_blank">Add New Invitation</a>
   </p>
-  
-  <p>
-    <%= f.label :note_sent_on %><br />
-    <%= f.date_select :note_sent_on %>
-  </p>
+
   <p>
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description %><br />
+	<span class="note">Please enter a message you would like to add to the thank you note.</span><br /><br /> 
   </p>
   <p><%= f.submit %></p>
 <% end %>

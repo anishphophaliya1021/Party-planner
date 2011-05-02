@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+	before_filter :login_required
   def index
     @locations = current_host.locations.paginate :page => params[:page], :per_page => 10
   end

@@ -1,4 +1,5 @@
 class PartyTypesController < ApplicationController
+  before_filter :login_required
   def index
     @party_types = PartyType.all
   end

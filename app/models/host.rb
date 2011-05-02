@@ -30,6 +30,7 @@ class Host < ActiveRecord::Base
   def name
 	self.first_name + " " + self.last_name
   end
+
   def encrypt_password(pass)
     BCrypt::Engine.hash_secret(pass, password_salt)
   end

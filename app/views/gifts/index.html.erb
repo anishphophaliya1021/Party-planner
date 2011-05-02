@@ -6,6 +6,7 @@
     <th>NoteSentOn</th>
     <th>Description</th>
   </tr>
+  
   <% for gift in @gifts %>
     <tr>
       <td><%= gift.invitation.guest.name + " for " + gift.invitation.party.name %></td>

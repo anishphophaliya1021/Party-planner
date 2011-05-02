@@ -1,0 +1,8 @@
+to <%= @invitation.guest.name %></br>
+You have been cordially invited to <%= @invitation.party.name%>. 
+I am expecting <%= @invitation.expected_attendees%> people.</br>
+Please RSVP to the following link,
+<%= link_to 'Start_rsvp', start_rsvp_path %></br>
+Use your invite code which is : <%= @invitation.invite_code %>
+thanks,</br>
+<%= @invitation.party.host.name.capitalize %>

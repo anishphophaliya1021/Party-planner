@@ -1,4 +1,5 @@
 class PartiesController < ApplicationController
+	before_filter :login_required, :except => [:show]
   def index
     @parties = current_host.parties.paginate :page => params[:page], :per_page => 10
   end

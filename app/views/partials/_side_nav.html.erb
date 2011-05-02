@@ -14,9 +14,9 @@
 		<%end%>
 		<%= link_to 'Guests', guests_path %><br>
 		<%= link_to 'Locations', locations_path %><br>
-		<% if(Party.all != nil && Guest.all != nil) %>
-		<%= link_to 'Invitations', invitations_path %><br>
-		<%= link_to 'Gifts', gifts_path %><br>
+		<% if(!current_host.parties.empty? && !current_host.guests.empty?) %>
+			<%= link_to 'Invitations', invitations_path %><br>
+			<%= link_to 'Gifts', gifts_path %><br>
 		<%end%>
 		<%= link_to "Profile", edit_host_path(current_host) %><br>
 		<!-- can set this manually, or just use the named route 'logout' -->

@@ -9,6 +9,10 @@ class Location < ActiveRecord::Base
   has_many :parties
   belongs_to :host
   
+  #scopes
+  #used in the populate file
+  scope :for_host, lambda {|host_id| where("host_id = ?", host_id) }
+  
   # Validations
   # -----------------------------
   validates_presence_of :host_id, :name, :city

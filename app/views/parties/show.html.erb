@@ -10,7 +10,7 @@
 
 		<p>
 		  <strong>Location:</strong>
-		  <%= @party.location.name %>
+		  <%= link_to "#{@party.location.name.to_s}", @party.location %>
 		</p>
 		<p>
 		  <strong>Date:</strong>
@@ -32,16 +32,25 @@
 		  <strong>Rsvp Date:</strong>
 		  <%= @party.rsvp_date.strftime("%m/%d/%Y") %>
 		</p>
+		</td>
+		<td>
+		<h1>Confirmed Guests</h1>
+		<% for invitation in @party.invitations %>
+			<% if(invitation.actual_attendees != nil) %>
+				<h2> - <%= invitation.guest.name.capitalize%> </h2>
+			<% end %>
+		<% end %>
 	</td>
-	<td></td>
-</tr>
+	</tr>
 <tr>
 	<td>
+	<% if (logged_in?) %>
 		<p>
 		  <%= link_to "Edit", edit_party_path(@party) %> |
 		  <%= link_to "Destroy", @party, :confirm => 'Are you sure?', :method => :delete %> |
 		  <%= link_to "View All", parties_path %>
 		</p>
+	<% end %>
 	</td>
 	<td></td>
 </tr>

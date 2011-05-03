@@ -16,4 +16,6 @@ class Guest < ActiveRecord::Base
   # Scopes
   # -----------------------------
   scope :currentUser, lambda{|h| where(["host_id = ?" ,h.id ])}
+  #used in the populate file
+  scope :for_host, lambda {|host_id| where("host_id = ?", host_id) }
   end

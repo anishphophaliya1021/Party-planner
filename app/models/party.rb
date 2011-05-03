@@ -31,9 +31,9 @@ class Party < ActiveRecord::Base
   
   def confirmed_attendees
 	sum = 0
-	self.guests.each do |g|
-		if(g.actual_attendees != nil)
-			sum = sum + g.actual_attendees.to_i
+	self.invitations.each do |i|
+		if(i.actual_attendees != nil)
+			sum = sum + i.actual_attendees.to_i
 		end
 	end
 	return sum
@@ -47,9 +47,9 @@ class Party < ActiveRecord::Base
   
   def expected_attendees
 	sum = 0
-	self.guests.each do |g|
-		if(g.expected_attendees != nil)
-			sum = sum + g.expected_attendees.to_i
+	self.invitations.each do |i|
+		if(i.expected_attendees != nil)
+			sum = sum + i.expected_attendees.to_i
 		end
 	end
 	return sum

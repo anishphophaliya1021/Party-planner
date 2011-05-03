@@ -18,7 +18,7 @@ class HostsController < ApplicationController
   end
   
   def create
-	if(current_host.isAdmin == true)
+	if(!logged_in? || current_host.isAdmin == true)
 		@host = Host.new(params[:host])
 		if (@host.save)
 			session[:host_id] = @host.id

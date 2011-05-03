@@ -19,6 +19,10 @@ PartyPlanner::Application.routes.draw do
   
   match 'rsvp_form' => 'invitations#rsvp_form', :as => :rsvp_form
   
+  match 'forgot_password' => 'hosts#forgot_password', :as => :forgot_password
+  
+  match 'account_info' => 'hosts#account_info', :as => :account_info
+  
   #match 'details' => 'home#rsvp_form', :as => _rsvp_form
   
   resources :sessions

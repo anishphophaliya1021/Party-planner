@@ -34,6 +34,10 @@ class Host < ActiveRecord::Base
   def encrypt_password(pass)
     BCrypt::Engine.hash_secret(pass, password_salt)
   end
+   
+  def self.gen_rand
+   rand(36**8).to_s(36)
+  end
 
   private
 

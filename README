@@ -2,6 +2,7 @@ README
 ---------
 This is the Party Planner application.
 Notes:
-	The emails are being sent out and can be seen in the rails console. However they are not being recieved due to some weird error.
-	Added to the populate file the code for adding the default admin. The username is aphophal and the password is "secret".
-	The RSVP works! However we need to get the invite code from the database as emails are not being recieved.
+	-The emails are being sent out and can be seen in the rails console. However they are not being recieved due to some weird error.
+	-Added to the populate file the code for adding the default admin. The username is aphophal and the password is "secret".
+	-The RSVP works! However we need to get the invite code from the database as emails are not being recieved.
+	-The forgot your password link sends an email with a randomized password which can be used to login and change the password.

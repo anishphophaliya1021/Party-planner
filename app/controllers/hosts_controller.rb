@@ -1,5 +1,5 @@
 class HostsController < ApplicationController
-  before_filter :login_required, :except => [:new, :create]
+  before_filter :login_required, :except => [:new, :create, :forgot_password, :account_info]
 
   def new
 		@host = Host.new
@@ -15,6 +15,24 @@ class HostsController < ApplicationController
   
   def show
 	 @host = Host.find(params[:id])
+  end
+  
+  def forgot_password
+  end
+  
+  def account_info
+	@host = Host.all.select {|h| h.email == params[:email]}
+	@host = @host[0]
+	if( @host != nil)
+		p = Host.gen_rand
+		@host.password = p
+		@host.password_confirmation = p
+		@host.save
+		PasswordMailer.send_password(p, @host).deliver
+		redirect_to root_url, :notice => "An email has been sent with the details to reset your password"
+	else
+		redirect_to root_url, :notice => "Invalid email id."
+	end
   end
   
   def create

@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class PartyTypeTest < ActiveSupport::TestCase
-  def test_should_be_valid
-    assert PartyType.new.valid?
-  end
+ 
+should validate_presence_of(:name)
+
+should have_many(:parties) 
+
 end

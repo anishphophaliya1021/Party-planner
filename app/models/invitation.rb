@@ -7,17 +7,13 @@ class Invitation < ActiveRecord::Base
   has_many :gifts, :dependent => :destroy
   belongs_to :guest 
   belongs_to :party
-  belongs_to :host
   
   # Validations
   # -----------------------------
-  validates_presence_of :party_id, :guest_id
-  #validates_inclusion_of :party_id, :in => Party.all.map{|p| p.id}
-  #validates_inclusion_of :guest_id, :in => Guest.all.map{|g| g.id}
+  validates_presence_of :party_id, :guest_id, :expected_attendees
+  validates_numericality_of :expected_attendees, :greater_than_or_equal_to => 0, :only_integer => true
+  validates_numericality_of :actual_attendees, :allow_nil => true, :greater_than_or_equal_to => 0, :only_integer => true
   
-  # Scopes
-  # -----------------------------
-  scope :currentUser, lambda{|g| where(["party_id in ?", p.id])}
   def name
 	self.guest.name.to_s + " for " + self.party.name.to_s
   end

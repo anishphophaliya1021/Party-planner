@@ -9,12 +9,10 @@
     <tr>
       <td><%= guest.name %></td>
       <td><%= guest.email %></td>
-	  <%#We have removed the host_id as its the current user's id %>
-      <%# guest.host_id %>
-		  <td><%= guest.notes %></td>
-		  <td><%= link_to "Show", guest %></td>
-		  <td><%= link_to "Edit", edit_guest_path(guest) %></td>
-		  <td><%= link_to "Destroy", guest, :confirm => 'Are you sure?', :method => :delete %></td>
+	  <td><%= guest.notes %></td>
+	  <td><%= link_to "Show", guest %></td>
+	  <td><%= link_to "Edit", edit_guest_path(guest) %></td>
+	  <td><%= link_to "Destroy", guest, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>

@@ -15,7 +15,8 @@ class Location < ActiveRecord::Base
   
   # Validations
   # -----------------------------
-  validates_presence_of :host_id, :name, :city
+  #using all the address info to make the google map so can't have it blank
+  validates_presence_of :host_id, :name, :city, :street, :state
   validates_numericality_of :zip, :only_integer => true, :message => "invalid zip"
   validates_length_of :zip, :in => 5..6, :wrong_length => "invalid zip"
   validates_numericality_of :longitude, :allow_nil => true

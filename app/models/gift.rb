@@ -3,10 +3,10 @@ class Gift < ActiveRecord::Base
   
   #RELATIONSHIPS
   #---------------------------------------------
-  belongs_to :party
+  #belongs_to :party
   belongs_to :invitation
-  belongs_to :guest
-  belongs_to :host
+  #belongs_to :guest
+  #belongs_to :host
   
   # Validations
   # -----------------------------

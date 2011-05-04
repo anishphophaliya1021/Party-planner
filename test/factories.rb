@@ -14,7 +14,7 @@
   Factory.define :party do |p|
     p.association :host
     p.name "Graduation Party"
-    p.party_date 1.month.from_now
+    p.date 1.month.from_now
     p.rsvp_date 3.weeks.from_now
     p.association :location
     p.association :party_type

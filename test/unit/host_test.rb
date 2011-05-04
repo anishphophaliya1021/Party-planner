@@ -1,7 +1,30 @@
 require 'test_helper'
 
 class HostTest < ActiveSupport::TestCase
+
+#check relationships
+	should have_many(:guests)
+	should have_many(:parties)
+	should have_many(:locations)
+	should have_many(:invitations).through(:parties)
+	
+#check validations
+	should validate_presence_of(:first_name)
+	should validate_presence_of(:last_name)
+	should validate_presence_of(:email)
+	should validate_uniqueness_of(:email)
+	should validate_uniqueness_of(:username)
+	should validate_presence_of(:username)
+	should validate_presence_of(:password)
+	
+	should_not allow_value("3").for(:password)
+	should_not allow_value("av").for(:password)
+	should allow_value("sekdf").for(:password)
+	should allow_value("sekd343f").for(:password)
+	
   def new_host(attributes = {})
+    attributes[:first_name] ||= 'foo'
+    attributes[:last_name] ||= 'bar'
     attributes[:username] ||= 'foo'
     attributes[:email] ||= 'foo@example.com'
     attributes[:password] ||= 'abc123'

@@ -13,8 +13,6 @@ class Party < ActiveRecord::Base
   
   # Scopes
   # -----------------------------
-  #very important scope...helps in accessing info of the current user!!!
-  scope :currentUser, lambda{|h| where(["host_id = ?" ,h.id ])}
   scope :mostRecent, order("date","start_time")
   
   # Validations

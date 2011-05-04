@@ -79,6 +79,8 @@ GEM
       json (>= 1.4.6)
     hirb (0.4.5)
     i18n (0.5.0)
+    interactive_editor (0.0.8)
+      spoon (>= 0.0.1)
     json (1.5.1-x86-mingw32)
     json_pure (1.5.1)
     launchy (0.4.0)
@@ -132,6 +134,7 @@ GEM
     simplecov (0.4.2)
       simplecov-html (~> 0.4.4)
     simplecov-html (0.4.4)
+    spoon (0.0.1)
     sqlite3 (1.3.3-x86-mingw32)
     sqlite3-ruby (1.3.3)
       sqlite3 (>= 1.3.3)
@@ -143,6 +146,10 @@ GEM
     tzinfo (0.3.27)
     validates_timeliness (3.0.5)
       timeliness (~> 0.3.2)
+    webrat (0.7.3)
+      nokogiri (>= 1.2.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5.3)
     will_paginate (2.3.15)
     wirble (0.1.3)
     xpath (0.1.4)
@@ -153,7 +160,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby
-  capybara (= 0.4.1.2)
+  capybara
   chronic
   cucumber-rails
   database_cleaner
@@ -162,20 +169,18 @@ DEPENDENCIES
   faker
   formtastic
   geokit
-  gherkin
   hirb
-  json
-  json_pure
+  interactive_editor
   launchy
   mocha
   nifty-generators
   nokogiri
   populator3
   rails (= 3.0.7)
-  rspec
   shoulda
   simplecov
   sqlite3-ruby
   validates_timeliness (~> 3.0.2)
+  webrat
   will_paginate
   wirble

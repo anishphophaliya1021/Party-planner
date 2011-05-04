@@ -1,4 +1,4 @@
-class InvitationsController < ApplicationController
+	class InvitationsController < ApplicationController
 	before_filter :login_required, :except => [:start_rsvp, :rsvp_form, :update]
 	
  def index
@@ -9,8 +9,11 @@ class InvitationsController < ApplicationController
   end
   
   def rsvp_form
-  @invitation = Invitation.all.select{|i|  i.invite_code == params[:invite_code]}
-  @invitation = @invitation[0]
+	  @invitation = Invitation.all.select{|i|  i.invite_code == params[:invite_code]}
+	  @invitation = @invitation[0]
+	  if @invitation == nil
+		redirect_to root_url, :notice => "The invite code entered is invalid."
+	  end
   end
   
   def show

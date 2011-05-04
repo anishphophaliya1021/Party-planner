@@ -1,8 +1,13 @@
 README
 ---------
 This is the Party Planner application.
+Please read before grading..
 Notes:
 	-The emails are being sent out and can be seen in the rails console. However they are not being recieved due to some weird error.
 	-Added to the populate file the code for adding the default admin. The username is aphophal and the password is "secret".
 	-The RSVP works! However we need to get the invite code from the database as emails are not being recieved.
 	-The forgot your password link sends an email with a randomized password which can be used to login and change the password.
+	-All my Cucumber tests don't pass because I have a field called "date" in the party and not "party_date" (as this was in the ERD).
+	-There are some other cucumber tests which show error due to formatting.
+	-Most of the unit tests pass.
+	-The only unit tests that fail are for either the Host (left as it is) or because they don't recognize 'destroy' in the teardown method. 
